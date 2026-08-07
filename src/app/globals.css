@@ -1,0 +1,180 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/*
+  Design tokens extracted from the Figma "Developer Portfolio" design.
+  Dark purple canvas, near-white text, cyan -> magenta accent gradient.
+*/
+:root {
+  /* Surfaces */
+  --background: #0c0a1a;
+  --background-elevated: #140f28;
+  --surface: #1a1433;
+  --surface-strong: #221a40;
+  --hero-overlay: #17102e;
+
+  /* Text */
+  --foreground: #fafafa;
+  --muted: #b8b3c9;
+  --hint: #8a83a6;
+
+  /* Borders */
+  --border: #2c2350;
+  --divider: #2a2447;
+
+  /* Accent gradient stops */
+  --accent-cyan: #5dffff;
+  --accent-magenta: #ae0ca7;
+  --accent: #9d5cff;
+
+  /* Radii */
+  --radius: 0.75rem;
+  --radius-pill: 40px;
+
+  /* Layout */
+  --container-max: 1200px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-elevated: var(--background-elevated);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-hero-overlay: var(--hero-overlay);
+
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-hint: var(--hint);
+
+  --color-border: var(--border);
+  --color-divider: var(--divider);
+
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-magenta: var(--accent-magenta);
+  --color-accent: var(--accent);
+
+  --radius-pill: var(--radius-pill);
+
+  --font-display: var(--font-josefin), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Offset anchor jumps by the fixed header height (h-16) */
+  scroll-padding-top: 4rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reusable accent gradient text */
+.text-gradient {
+  background-image: linear-gradient(
+    106deg,
+    var(--accent-cyan) 5%,
+    var(--accent-magenta) 88%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Accent gradient background (buttons, chips) */
+.bg-gradient-accent {
+  background-image: linear-gradient(
+    54deg,
+    var(--accent-cyan) 4%,
+    var(--accent-magenta) 104%
+  );
+}
+
+/* Hairline gradient divider that fades out at both ends */
+.divider-gradient {
+  height: 1px;
+  border: 0;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--border) 20%,
+    var(--border) 80%,
+    transparent
+  );
+}
+
+/* Soft ambient glow blob — pair with absolute positioning + blur */
+.glow-blob {
+  background: radial-gradient(
+    circle,
+    rgba(157, 92, 255, 0.35) 0%,
+    rgba(93, 255, 255, 0.08) 55%,
+    transparent 72%
+  );
+}
+
+/* Faint grid pattern used behind the hero portrait */
+.bg-grid {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 99px 116px;
+}
+
+/*
+  Rounded hero panel — the dark, top-lit card the whole hero sits on
+  in the Figma design (Rectangle 4). Subtle gradient body, a hairline
+  highlight rim and a soft drop shadow lifting it off the page.
+*/
+.hero-panel {
+  background-image: linear-gradient(
+    180deg,
+    #2a2447 0%,
+    #1c1636 24%,
+    #191331 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 40px 120px -40px rgba(0, 0, 0, 0.65), inset 0 1px 0
+    rgba(255, 255, 255, 0.08);
+}
+
+/*
+  Ruled grid confined to the portrait area (Figma "Patern" lines).
+  Same 99×116 cell as .bg-grid but masked to a soft ellipse so the
+  lines fade out toward the edges instead of tiling the whole panel.
+*/
+.hero-grid {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 99px 116px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 85% at 68% 42%,
+    black 38%,
+    transparent 74%
+  );
+  mask-image: radial-gradient(
+    ellipse 75% 85% at 68% 42%,
+    black 38%,
+    transparent 74%
+  );
+}
