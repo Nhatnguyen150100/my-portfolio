@@ -1,5 +1,6 @@
 'use server';
 
+import { renderContactEmail } from '@/modules/home/emails/contact-email';
 import { contactSchema } from '@/modules/home/schemas/contact.schema';
 import { Resend } from 'resend';
 
@@ -45,6 +46,7 @@ export async function sendContactMessage(
 
   const { name, email, message } = parsed.data;
   const resend = new Resend(apiKey);
+  const { html, text } = renderContactEmail({ name, email, message });
 
   try {
     const { error } = await resend.emails.send({
@@ -52,7 +54,8 @@ export async function sendContactMessage(
       to: TO_EMAIL,
       replyTo: email,
       subject: `New portfolio message from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      html,
+      text,
     });
 
     if (error) {

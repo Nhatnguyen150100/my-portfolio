@@ -141,6 +141,8 @@ export type TimelineItem = {
   title: string;
   /** Company or school. */
   org: string;
+  /** Optional small logo shown before the org name (path under /public). */
+  logo?: string;
   /** Employment type or study mode, e.g. "Full-time". */
   kind?: string;
   /** e.g. "2018 — 2023" or "Aug 2024 — Present". */
@@ -191,6 +193,7 @@ export const EDUCATION: TimelineItem[] = [
   {
     title: "Engineer's Degree — Information Technology",
     org: 'Hanoi University of Science and Technology (HUST)',
+    logo: '/images/logo-hust.jpg',
     period: 'Jun 2018 — Jun 2023',
     location: 'Hanoi, Vietnam',
     grade: 'Good',
@@ -209,7 +212,7 @@ export const EDUCATION: TimelineItem[] = [
 
 export const CERTIFICATIONS: TimelineItem[] = [
   {
-    title: 'JLPT N3 — Japanese-Language Proficiency',
+    title: 'JLPT N3 — Japanese',
     org: 'Japan Foundation & JEES',
     description:
       'Intermediate Japanese proficiency across reading, listening, grammar and vocabulary.',

@@ -14,6 +14,7 @@ import {
   type LucideIcon,
   MapPin,
 } from 'lucide-react';
+import Image from 'next/image';
 
 export function ExperienceSection() {
   return (
@@ -108,10 +109,23 @@ function TimelineRow({ item }: { item: TimelineItem }) {
       <h4 className="mt-1 text-[18px] font-semibold text-foreground">
         {item.title}
       </h4>
-      <p className="mt-0.5 text-[15px] text-muted">
-        {item.org}
-        {item.kind ? <span className="text-hint"> · {item.kind}</span> : null}
-      </p>
+      <div className="mt-0.5 flex items-center gap-2">
+        {item.logo ? (
+          <span className="relative h-6 w-4 shrink-0 overflow-hidden">
+            <Image
+              src={item.logo}
+              alt={`${item.org} logo`}
+              fill
+              sizes="24px"
+              className="object-contain"
+            />
+          </span>
+        ) : null}
+        <p className="text-[15px] text-muted">
+          {item.org}
+          {item.kind ? <span className="text-hint"> · {item.kind}</span> : null}
+        </p>
+      </div>
       {item.location ? (
         <p className="mt-1 flex items-center gap-1 text-[13px] text-hint">
           <MapPin className="size-3.5" />
