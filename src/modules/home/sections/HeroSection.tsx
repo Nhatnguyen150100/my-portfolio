@@ -54,7 +54,7 @@ export function HeroSection() {
                   'radial-gradient(circle, rgba(157,92,255,0.5) 0%, rgba(93,255,255,0.16) 48%, transparent 70%)',
               }}
             />
-            <div className="relative mx-auto aspect-3/2 w-full max-w-170">
+            <div className="relative mx-auto aspect-4/3 w-full max-w-170">
               <Image
                 src={PROFILE.portrait}
                 alt="Portrait of Nhat Nguyen"
