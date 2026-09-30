@@ -4,16 +4,16 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Nhat Nguyen | Full Stack Engineer',
+    default: 'Nhat Nguyen | Software Engineer',
     template: '%s | Nhat Nguyen',
   },
 
   description:
-    'Full Stack Engineer specializing in React, Next.js, Node.js, NestJS, Spring Boot, and AI-powered applications. Passionate about building scalable web applications with modern technologies.',
+    'Software Engineer specializing in React, Next.js, Node.js, NestJS, Spring Boot, and AI-powered applications. Passionate about building scalable web applications with modern technologies.',
 
   keywords: [
     'Nhat Nguyen',
-    'Full Stack Engineer',
+    'Software Engineer',
     'Software Engineer',
     'React Developer',
     'Next.js',
@@ -54,10 +54,10 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: 'Nhat Nguyen | Full Stack Engineer',
+    title: 'Nhat Nguyen | Software Engineer',
 
     description:
-      'Full Stack Engineer specializing in React, Next.js, NestJS, Spring Boot, and modern AI applications.',
+      'Software Engineer specializing in React, Next.js, NestJS, Spring Boot, and modern AI applications.',
 
     url: 'https://your-domain.com',
 
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
 
-    title: 'Nhat Nguyen | Full Stack Engineer',
+    title: 'Nhat Nguyen | Software Engineer',
 
     description:
       'Building scalable web applications with React, Next.js, NestJS, Spring Boot and AI.',

@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { FadeIn } from '@/components/ui/fade-in';
+import { Typewriter } from '@/components/ui/typewriter';
 import { PROFILE } from '@/modules/home/data/portfolio';
 import Image from 'next/image';
 
@@ -23,21 +24,33 @@ export function HeroSection() {
 
         <div className="relative mx-auto grid w-full max-w-350 items-center gap-12 md:grid-cols-[1.15fr_1fr]">
           <div className="max-w-auto">
-            <FadeIn>
-              <h1 className="font-display text-[56px] font-bold leading-[1.05] text-foreground md:text-[80px] lg:text-[90px]">
-                {PROFILE.firstName}
-              </h1>
-            </FadeIn>
-            <FadeIn delay={0.08}>
-              <p className="text-gradient font-display mt-1 text-[34px] font-semibold md:text-[50px]">
-                {PROFILE.role}
-              </p>
-            </FadeIn>
-            <FadeIn delay={0.16}>
-              <p className="mt-6 text-[18px] leading-7.5 text-foreground/80">
-                {PROFILE.bio}
-              </p>
-            </FadeIn>
+            <Typewriter
+              segments={[
+                {
+                  text: PROFILE.firstName,
+                  as: 'h1',
+                  className:
+                    'font-display text-[56px] font-bold leading-[1.05] text-foreground md:text-[80px] lg:text-[90px]',
+                  speed: 55,
+                  startGap: 300,
+                },
+                {
+                  text: PROFILE.role,
+                  className:
+                    'text-gradient font-display text-[34px] font-semibold md:text-[50px]',
+                  wrapperClassName: 'mt-1',
+                  speed: 60,
+                  startGap: 250,
+                },
+                {
+                  text: PROFILE.bio,
+                  className: 'text-[18px] leading-7.5 text-foreground/80',
+                  wrapperClassName: 'mt-6',
+                  speed: 14,
+                  startGap: 250,
+                },
+              ]}
+            />
             <FadeIn delay={0.24}>
               <Button asChild className="mt-9">
                 <a href="#contact">Contact</a>

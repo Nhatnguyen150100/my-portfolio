@@ -10,8 +10,8 @@ export const NAV_LINKS = [
 
 export const PROFILE = {
   firstName: "Hi, I'm Nhat Nguyen",
-  role: 'Full Stack Engineer',
-  bio: `Full Stack Engineer specializing in React, Next.js, Node.js, NestJS, and Spring Boot. 
+  role: 'Software Engineer',
+  bio: `Software Engineer specializing in React, Next.js, Node.js, NestJS, and Spring Boot. 
 I enjoy building scalable web applications with clean architecture, intuitive user experiences, 
 and maintainable code. Recently, I've also been exploring AI-powered applications, automation, 
 and modern developer tools to create smarter software solutions.`,
@@ -19,7 +19,7 @@ and modern developer tools to create smarter software solutions.`,
 } as const;
 
 export const ABOUT_TEXT = `
-I'm a Full Stack Engineer passionate about building modern web applications from frontend to backend.
+I'm a Software Engineer passionate about building modern web applications from frontend to backend.
 
 My primary stack includes React, Next.js, TypeScript, Tailwind CSS, Node.js, NestJS, Java Spring Boot, MongoDB, PostgreSQL, and Redis. I enjoy designing scalable systems, building REST APIs, and creating responsive user interfaces with a strong focus on performance and maintainability.
 
@@ -42,7 +42,7 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    tag: 'Personal · Full Stack',
+    tag: 'Personal · Software',
     title: 'MyCeph — Orthodontic Cloud Platform',
     description:
       "A personal side project I designed, built and deployed on my own from end to end. A cloud web app that helps orthodontic clinics manage patients, treatment progress, appointments and clinical records — with a React/TypeScript frontend and a Node.js + MongoDB API. It's live and open source.",
@@ -55,7 +55,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
-    tag: 'Full Stack',
+    tag: 'Software',
     title: 'English Academy',
     description:
       'A full-stack English learning platform featuring a React Native (Expo) mobile app, a React web application, and a Node.js backend. The platform offers interactive courses, online exams, AI-assisted learning, blogging, gamification, multilingual support, and premium subscriptions.',
@@ -132,7 +132,7 @@ export const SOCIAL_LINKS = [
 
 export const CONTACT_COPY = {
   heading: "Let's Build Something Great Together",
-  body: `Whether you're looking for a Full Stack Engineer, discussing a new project,
+  body: `Whether you're looking for a Software Engineer, discussing a new project,
 or simply want to connect, I'd love to hear from you. Feel free to reach out—I'm always open to new opportunities and collaborations.`,
 } as const;
 
@@ -178,7 +178,7 @@ export const EXPERIENCE: TimelineItem[] = [
     tags: ['Vue.js', 'TypeScript', 'Flutter', 'Firebase', 'REST API'],
   },
   {
-    title: 'Full Stack Developer',
+    title: 'Software Developer',
     org: 'Medbrain Vietnam',
     kind: 'Part-time',
     period: 'Oct 2021 — Aug 2023',
