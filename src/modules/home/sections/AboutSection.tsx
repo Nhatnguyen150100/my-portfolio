@@ -17,7 +17,7 @@ export function AboutSection() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="mx-auto mt-8 max-w-4xl text-center text-[18px] leading-7.5 text-muted">
+          <p className="mx-auto mt-8 max-w-4xl sm:text-center sm:text-[18px] text-sm leading-7.5 text-muted text-justify">
             {ABOUT_TEXT}
           </p>
         </FadeIn>
